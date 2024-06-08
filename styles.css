@@ -87,7 +87,7 @@ main {
 }
 
 input[type="text"],
-input[type="email"],
+input[type="tlphn"],
 input[type="datetime-local"] {
     width: 100%;
     padding: 8px;
@@ -148,7 +148,7 @@ button:disabled {
     }
 
     input[type="text"],
-    input[type="email"],
+    input[type="tlphn"],
     input[type="datetime-local"] {
         font-size: 0.9em;
     }
