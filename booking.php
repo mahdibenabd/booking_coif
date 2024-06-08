@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
 
-    $to = 'owner@example.com';  // Replace with the owner's email address
+    $to = 'walidcoiff.wahat@gmail.com';  // Replace with the owner's email address
     $subject = 'Nouvelle réservation';
     $message = "Détails de la réservation:\n\n".
                "Service: $service\n".
