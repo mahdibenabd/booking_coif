@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WALID COIF - Réservation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.png" alt="WALID COIF Logo">
+            </div>
+            <div class="contact-info">
+                <p>123 Rue de la Coiffure, Paris, France</p>
+                <p>Tél: +33 1 23 45 67 89</p>
+            </div>
+        </div>
+        <h1>WALID COIF</h1>
+    </header>
+    <main>
+        <section id="booking">
+            <h2>Réservez votre coiffure</h2>
+            <form id="bookingForm" action="booking.php" method="POST">
+                <div class="tab">
+                    <h3>Sélectionnez le service</h3>
+                    <div class="option-box" data-value="Coupe Homme">
+                        Coupe Homme
+                    </div>
+                    <div class="option-box" data-value="Coupe Femme">
+                        Coupe Femme
+                    </div>
+                    <div class="option-box" data-value="Coupe Enfant">
+                        Coupe Enfant
+                    </div>
+                    <input type="hidden" name="service" id="serviceInput" required>
+                    <button type="button" id="nextBtn">Suivant</button>
+                </div>
+                <div class="tab">
+                    <h3>Sélectionnez le coiffeur</h3>
+                    <div class="option-box" data-value="Walid">
+                        <img src="walid.jpg" alt="Walid">
+                        Walid
+                    </div>
+                    <div class="option-box" data-value="Ahmed">
+                        <img src="ahmed.jpg" alt="Ahmed">
+                        Ahmed
+                    </div>
+                    <input type="hidden" name="employee" id="employeeInput" required>
+                    <button type="button" id="prevBtn">Précédent</button>
+                    <button type="button" id="nextBtn">Suivant</button>
+                </div>
+                <div class="tab">
+                    <h3>Choisissez l'heure</h3>
+                    <label for="time">Sélectionnez la date et l'heure:</label>
+                    <input type="text" id="timePicker" name="time" required>
+                    <button type="button" id="prevBtn">Précédent</button>
+                    <button type="button" id="nextBtn">Suivant</button>
+                </div>
+                <div class="tab">
+                    <h3>Vos coordonnées</h3>
+                    <label for="name">Nom:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="tlphn">Numéro de téléphone:</label>
+                    <input type="tlphn" id="tlphn" name="tlphn" required>
+                    <button type="button" id="prevBtn">Précédent</button>
+                    <button type="submit">Réserver</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr("#timePicker", {
+                enableTime: true,
+                dateFormat: "Y-m-d H:i",
+                minDate: "today",
+                time_24hr: true,
+                locale: {
+                    firstDayOfWeek: 1 // Start week on Monday
+                }
+            });
+        });
+    </script>
+</body>
+</html>
